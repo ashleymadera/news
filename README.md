@@ -1,8 +1,7 @@
 
 # News App
 
-- [Project Planning](#Project-Planning)
-  - [Overview](#Overview)
+- [Overview](#Overview)
   - [Goals](#Goals)
   - [Libraries](#Libraries)
   - [Post-MVP](#Post-MVP)
@@ -49,7 +48,7 @@ Advanced search is supported here:
 #### Libraries
 
 
-|     Library      | Description                                |
+|     Library     |
 | :--------------: | :----------------------------------------- |
 |   React Router   | 
 |    BootStrap    |  
