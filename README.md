@@ -15,7 +15,7 @@ _**News App** is your number one source for news article research. _
 
 News App is fueled by :
 
-![With Search Results](NewsApi.org)
+![News Api](NewsApi.org)
 <br>
 ### How-To_Use
 
