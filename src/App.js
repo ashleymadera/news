@@ -8,7 +8,8 @@ import Country from "./components/Country"
 
 
 function App() {
-  const [countries, updateCountries] = useState([])
+  const [data, setData] = useState('')
+  console.log(data)
 
   const [input, setInput] = useState('')
   const [searchResults, setSearchResults] = useState([])
@@ -24,11 +25,23 @@ function App() {
 
   const apiCall = async (e) => {
     e.preventDefault()
-    const response = await axios(`https://newsapi.org/v2/everything?q=${input}&apiKey=9e74ed0cdd63453bab817d916b088ae6&totalResults=20`)
-    console.log(response.data.articles)
-    setSearchResults(response.data.articles)
+    console.log(data)
+
+    if (setData == null) {
+      const response = await axios(`https://newsapi.org/v2/everything?q=${input}&apiKey=9e74ed0cdd63453bab817d916b088ae6&totalResults=20`)
+      console.log(response.data.articles)
+      setSearchResults(response.data.articles)
+    } else {
+      const response = await axios(`https://newsapi.org/v2/everything?q=${input}&sortBy=${data}&apiKey=9e74ed0cdd63453bab817d916b088ae6`)
+      console.log(response.data.articles)
+      setSearchResults(response.data.articles)
+    }
   }
 
+  function handleSortTypeChange(e) {
+    setData(e.target.value);
+    console.log(setData)
+  }
 
 
   return (
@@ -39,6 +52,13 @@ function App() {
           onChange={e => setInput(e.target.value)}
           value={input}
         />
+        <select onChange={handleSortTypeChange} >
+          defaultValue={setData}
+          <option selected value='null'>Sort Article</option>
+          <option value="publishedAt">date</option>
+          <option value="relevancy">relevance</option>
+          <option value="popularity">popularity</option>
+        </select>
         <button onClick={apiCall}>Go</button>
       </form>
       <div>

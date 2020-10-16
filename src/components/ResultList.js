@@ -5,7 +5,7 @@ export default function ResultList(props) {
   return (
     <div className='homepage'>
 
-      <h2>{props.result.author}</h2>
+      <h2>{props.result.title}</h2>
     </div>
   )
 }
