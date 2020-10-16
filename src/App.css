@@ -21,7 +21,10 @@ body{
   background-color: lavender;
 
 }
-button{
+Button{
   background-color: #775E82;
 
+}
+.card{
+  margin: 15px;
 }

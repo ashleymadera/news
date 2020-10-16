@@ -61,7 +61,7 @@ function App() {
           </Form.Control>
         </Col>
         <Col>
-          <Button vairant='primary' onClick={apiCall}>Search</Button>
+          <Button variant="light" onClick={apiCall}>Search</Button>
         </Col>
       </Row>
 
