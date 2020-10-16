@@ -1,68 +1,90 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![gif](https://media.giphy.com/media/VgNctFELbNwdTNMWRs/giphy.gif)
 
-## Available Scripts
 
-In the project directory, you can run:
+# Wormy
 
-### `yarn start`
+# PROJECT 2 README <!-- omit in toc -->
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [Project Planning](#Project-Planning)
+  - [Overview](#Overview)
+  - [Goals](#Goals)
+  - [Libraries](#Libraries)
+  - [Post-MVP](#Post-MVP)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Overview
 
-### `yarn build`
+_**News App** is your number one source for news article research. _
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+News App is fueled by :
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![With Search Results](NewsApi.org)
+<br>
+### How-To_Use
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+Enter a keywords or phrases to search for an article title and body.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Advanced search is supported here:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-Surround phrases with quotes (") for exact match.
+-Prepend words or phrases that must appear with a + symbol. Eg: +bitcoin
+-Prepend words that must not appear with a - symbol. Eg: -bitcoin
+-Alternatively you can use the AND / OR / NOT keywords, and optionally group these with parenthesis. Eg: crypto AND (ethereum OR litecoin) NOT bitcoin.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<br>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Goals
 
-## Learn More
+ - Search for articles (in language 'en') by a search string (the homepage of the app is simply a search bar)
+  - Search results show the image, title, publish date, description and the url (as 'Read More' button) of the articles
+  - Search results are sortable by either of the following criterias - date, relevance, popularity or none
+  - Clicking the image or the 'Read More' button will open the article in a new tab
+  - Responsiveness! For smaller screen sizes, show articles in a single column and hide the article description
+  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<br>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+<br>
 
-### Analyzing the Bundle Size
+#### Libraries
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+|     Library      | Description                                |
+| :--------------: | :----------------------------------------- |
+|   React Router   | 
+|    BootStrap    |  
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+<br>
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+#### Component Hierarchy
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `yarn build` fails to minify
+```
+src
+|__ App.js
+|__ App.css
+   |__ components/
+      |__ ResultList.js
+      |__ LiveNews.js
+      
+              
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+### Post-MVP
+
+
+- _Add in Live New Feed to be the default display of the page._
+- _Add an additional page to be redirected to on search to leave main landing page to host live feeds and second page to host search results._
+
+
+<br>
+
+***

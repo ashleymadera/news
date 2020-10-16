@@ -6,6 +6,7 @@ import './App.css';
 import ResultList from './components/ResultList';
 import { Row, Col, Form } from 'react-bootstrap';
 import './App.css';
+// import LiveNews from './components/LiveNews';
 
 function App() {
   const API_KEY = process.env.REACT_APP_API_KEY
@@ -13,17 +14,17 @@ function App() {
   const [data, setData] = useState('')
   const [input, setInput] = useState('')
   const [searchResults, setSearchResults] = useState([])
-  const [liveFeed, setLiveFeed] = useState([])
+  // const [liveFeed, setLiveFeed] = useState([])
 
-  useEffect(() => {
-    const apiCallLiveFeed = async (e) => {
-      const resp = await axios(`https://newsapi.org/v2/top-headlines?country=us&totalResults=4&apiKey=${API_KEY}`)
+  // useEffect(() => {
+  //   const apiCallLiveFeed = async (e) => {
+  //     const resp = await axios(`https://newsapi.org/v2/top-headlines?country=us&totalResults=4&apiKey=${API_KEY}`)
 
-      setLiveFeed(resp.data.articles)
-      console.log(resp.data.articles)
-    }
-    apiCallLiveFeed()
-  }, [])
+  //     setLiveFeed(resp.data.articles)
+  //     console.log(resp.data.articles)
+  //   }
+  //   apiCallLiveFeed()
+  // }, [])
 
   const apiCall = async (e) => {
     e.preventDefault()
