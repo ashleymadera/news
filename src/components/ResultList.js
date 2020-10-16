@@ -7,7 +7,7 @@ export default function ResultList(props) {
 
   return (
     <Card style={{ width: '30rem' }}>
-      <Card.Img variant="top" src={props.result.urlToImage} style={{ width: '30rem' }} />
+      <Card.Img variant="top" src={props.result.urlToImage} style={{ height: '20rem' }} />
       <Card.Body>
         <Card.Title>{props.result.title}</Card.Title>
         <Card.Text>

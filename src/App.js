@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from "axios"
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
@@ -7,24 +7,35 @@ import ResultList from './components/ResultList';
 import { Row, Col, Form } from 'react-bootstrap';
 import './App.css';
 
-
-
 function App() {
+  const API_KEY = process.env.REACT_APP_API_KEY
+
   const [data, setData] = useState('')
   const [input, setInput] = useState('')
   const [searchResults, setSearchResults] = useState([])
+  const [liveFeed, setLiveFeed] = useState([])
+
+  useEffect(() => {
+    const apiCallLiveFeed = async (e) => {
+      const resp = await axios(`https://newsapi.org/v2/top-headlines?country=us&totalResults=4&apiKey=${API_KEY}`)
+
+      setLiveFeed(resp.data.articles)
+      console.log(resp.data.articles)
+    }
+    apiCallLiveFeed()
+  }, [])
 
   const apiCall = async (e) => {
     e.preventDefault()
     console.log(data)
 
     if (setData == null) {
-      const response = await axios(`https://newsapi.org/v2/everything?q=${input}&apiKey=9e74ed0cdd63453bab817d916b088ae6&totalResults=20&language=en`)
-      console.log(response.data.articles)
+      const response = await axios(`https://newsapi.org/v2/everything?q=${input}&apiKey=${API_KEY}&totalResults=20&language=en`)
+      // console.log(response.data.articles)
       setSearchResults(response.data.articles)
     } else {
-      const response = await axios(`https://newsapi.org/v2/everything?q=${input}&sortBy=${data}&apiKey=9e74ed0cdd63453bab817d916b088ae6&language=en`)
-      console.log(response.data.articles)
+      const response = await axios(`https://newsapi.org/v2/everything?q=${input}&sortBy=${data}&apiKey=${API_KEY}&language=en`)
+      // console.log(response.data.articles)
       setSearchResults(response.data.articles)
     }
   }
@@ -34,12 +45,11 @@ function App() {
     console.log(setData)
   }
 
-
   return (
     <Container>
 
       <Row className='justify-content-center'>
-        <Col xs={8}>
+        <Col xs={5} md={8} lg={8}>
           <Form.Control
             onChange={e => setInput(e.target.value)}
             value={input}
