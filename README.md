@@ -1,9 +1,5 @@
-![gif](https://media.giphy.com/media/VgNctFELbNwdTNMWRs/giphy.gif)
 
-
-# Wormy
-
-# PROJECT 2 README <!-- omit in toc -->
+# News App
 
 - [Project Planning](#Project-Planning)
   - [Overview](#Overview)
